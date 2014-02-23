@@ -279,7 +279,7 @@ app.get('/people-search-all', function(request, response){
 //!Only call this after you've authenticated with LinkedIn.
 app.get('/profile', function(request, response){
     //console.log("authToken for LinkedIn profile request is " + request.session.access_token + " for user with name " + req.session.name)
-    linkedInProfile(req.session.access_token  , function(err, json){
+    linkedInProfile(request.session.access_token  , function(err, json){
         response.writeHead(200)
         response.end('Hello ' + json.firstName + " " + json.lastName)
     })
