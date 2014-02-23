@@ -27,9 +27,9 @@ var httpsServer = https.createServer(credentials, app)
 //NOT SURE WE STRICLTY NEED TO have LinkedIn redirect to our https for authentication.  Might get away with http!!
 
 
-//We should probably calculate this, and not assume the whole thing.  Should just now the path!
+//TODO: IMPORTANT!! CALCULATE PROTOCOL AND HOSTNAME!! FROM the request.  When it's hard coded it means we can only deploy to one location!!!
 //!!!!When this is https then we should accept https at the bottom
-var linkedInAuthRedirectURL = 'http://demo-project-c9-groovyflow.c9.io/linkedin/auth/redirect/accept'
+var linkedInAuthRedirectURL = 'http://auth-node.herokuapp.comlinkedin/auth/redirect/accept'
 
 
 //app.use(express.logger());
