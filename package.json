@@ -1,0 +1,11 @@
+{
+    "name": "your_next_step",
+    "version": "0.0.1",
+    "description": "startup",
+    "dependencies": {
+        "express": "3.4.8",
+        "underscore": "1.5.2",
+        "async": "0.2.10",
+        "needle":"0.6.3"
+    }
+}
