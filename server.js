@@ -29,7 +29,7 @@ var httpsServer = https.createServer(credentials, app)
 
 //TODO: IMPORTANT!! CALCULATE PROTOCOL AND HOSTNAME!! FROM the request.  When it's hard coded it means we can only deploy to one location!!!
 //!!!!When this is https then we should accept https at the bottom
-var linkedInAuthRedirectURL = 'http://auth-node.herokuapp.comlinkedin/auth/redirect/accept'
+var linkedInAuthRedirectURL = 'http://auth-node.herokuapp.com/linkedin/auth/redirect/accept'
 
 
 //app.use(express.logger());
