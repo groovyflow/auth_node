@@ -19,8 +19,8 @@ console.log("working directory is " + process.cwd())
 // but with a bit nicer coding of the credentials objects as shown rom Node js in Action, p. 95
 //The files should be properites, and note that this is diffenent in cloud9 than on my computer!!
 var credentials = {
-    key: fs.readFileSync('/var/lib/stickshift/52f7ae814382ec8bc3000357/app-root/data/744366/node.js/key.pem'),
-    cert: fs.readFileSync('/var/lib/stickshift/52f7ae814382ec8bc3000357/app-root/data/744366/node.js/key-cert.pem')
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('key-cert.pem')
 };
 var httpServer = http.createServer(app)
 var httpsServer = https.createServer(credentials, app)
