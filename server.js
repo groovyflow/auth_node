@@ -29,7 +29,7 @@ var httpsServer = https.createServer(credentials, app)
 
 //TODO: IMPORTANT!! CALCULATE PROTOCOL AND HOSTNAME!! FROM the request.  When it's hard coded it means we can only deploy to one location!!!
 //!!!!When this is https then we should accept https at the bottom
-var linkedInAuthRedirectURL = 'http://auth-node.herokuapp.com/linkedin/auth/redirect/accept'
+var linkedInAuthRedirectURL = 'http://auth-node.herokuapp.com/oAuth2Token t'
 
 
 //app.use(express.logger());
@@ -256,7 +256,7 @@ var oAuth2Token = 'AQW02ZU6K0k4I4hK_ant9qGPcOgMxG8paozCV1pFdHqH5TIK3S-Z-TgzPRXnu
 app.get('/people-search', function(request, response) {
     var query = {
         'sort': 'connections',
-        'oauth2_access_token': oAuth2Token,
+        'oauth2_access_token': request.session.access_token,
         'start': 0,
         'count': 5
     };
