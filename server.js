@@ -75,10 +75,11 @@ app.get('/login', function(req, res){
     req.session.registrationState = makeId(12)
     console.log(req.session.registrationState)
     console.log('session name is ' + req.session.name)
+    //stringify didn't seem to URLEncode our space delimitted set of permissions, which are the value of the 'scope' key
     res.redirect("https://www.linkedin.com/uas/oauth2/authorization?" + querystring.stringify({
         'response_type':  'code',
         'client_id':config.api_key,
-        'scope': 'r_fullprofile r_emailaddress rw_nus r_network r_contactinfo' ,
+        'scope': 'r_fullprofile%20r_emailaddress%20rw_nus r_network%20r_contactinfo' ,
         'state': req.session.registrationState,
         'redirect_uri': linkedInAuthRedirectURL
     }))
