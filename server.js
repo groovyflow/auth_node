@@ -75,11 +75,10 @@ app.get('/login', function(req, res){
     req.session.registrationState = makeId(12)
     console.log(req.session.registrationState)
     console.log('session name is ' + req.session.name)
-    //Todo: Not doing scope for now, but instead specified the permissions we want on our LinkedIn applicaiton settings page
-    //Todo  state must be a unique identifier.  How do we generate that?
     res.redirect("https://www.linkedin.com/uas/oauth2/authorization?" + querystring.stringify({
         'response_type':  'code',
         'client_id':config.api_key,
+        'scope': 'r_fullprofile r_emailaddress rw_nus r_network r_contactinfo' ,
         'state': req.session.registrationState,
         'redirect_uri': linkedInAuthRedirectURL
     }))
