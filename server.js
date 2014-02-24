@@ -72,7 +72,7 @@ app.get('/', function(req, res) {
 app.get('/login', function(req, res){
     console.log('login name is ' + req.query.name)
     req.session.name=req.query.name
-    req.session.registrationState = makeId(12)
+    req.session.registrationState = makeId(22)
     console.log(req.session.registrationState)
     console.log('session name is ' + req.session.name)
     res.redirect("https://www.linkedin.com/uas/oauth2/authorization?" + querystring.stringify({
