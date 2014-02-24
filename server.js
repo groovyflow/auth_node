@@ -115,6 +115,7 @@ app.get('/linkedin/auth/redirect/accept', function(req, res){
         console.log("registration state is what we expected. query/session: " + req.query.state + "/" + req.session.registrationState)
     }
     
+    //Order is different than in Tim's, but has the same content, and is in the same order as: http://developer.linkedin.com/documents/authentication
     var queryStringToGetAccessTokenForAuthorizationCode = querystring.stringify({
        'grant_type' :'authorization_code',
        'code':req.query.code, 
